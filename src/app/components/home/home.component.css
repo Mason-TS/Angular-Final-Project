@@ -1,0 +1,62 @@
+.header {
+    display: flex;
+    height: 200px;
+    gap: 25px;
+    align-items: center;
+    margin-left: 25px;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+}
+
+.example-card {
+    max-width: 400px;
+    margin-top: 15px;
+    /* padding-right: 50px; */
+  
+}
+
+.cardImage {
+    width: 400px;
+    height: 266.66px;
+}
+
+#products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1666px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.productName {
+    display: inline;
+}
+
+.productPrice {
+    display: inline;
+    
+}
+.nameAndPrice {
+    display: flex;
+    justify-content: space-between;
+}
+
+#divContainer {
+    text-align: center;
+    margin-bottom: 60px;
+
+}
+
+.productName:hover {
+    text-decoration: underline;
+}
+
+.clickable:hover {
+    cursor:pointer;
+}

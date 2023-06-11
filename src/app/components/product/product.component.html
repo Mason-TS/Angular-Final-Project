@@ -1,0 +1,51 @@
+<div *ngIf="currentProduct.productName" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-xl-7"><img id="productImage" src="{{currentProduct.imageUrl}}"></div>
+        <div class="col-xs-6 col-xl-5">
+            <div class="row content">
+                <h1 id="name" class="col-12">{{currentProduct.productName}}</h1>
+                <h2 id="manu" class="col-6">{{currentProduct.manufacturer}}</h2>
+                <h2 id="price" class ="col-6">${{currentProduct.price}}</h2>
+                <button (click)="goBack()" class="col-3 button"  mat-stroked-button matTooltip="Go Back to the Previous Page">Back</button>
+                <button class="col-3 button" [routerLink]="['/edit', currentProduct.id]" color="primary" mat-stroked-button matTooltip="Edit Item">Edit</button>
+                <button class="col-3 button" (click)="deleteItem()" color="warn" mat-stroked-button matTooltip="Delete Item">Delete</button>
+                <p class="col-1"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="col-xs-12 col-xl-7 description">
+            <h3 class="descriptionLabel">Product Description</h3>
+            <br>
+            <h5 [innerText]="currentProduct.description"></h5>
+        </div>
+
+
+ 
+
+
+        <div class="col-xs-12 col-xl-5 detailsTable">
+            <h4 class="t-header">Product Details</h4>
+            <p class="t-p1">Manufacturer</p>
+            <p class="t-p2">{{currentProduct.manufacturer}}</p>
+            <p class="t-p1">Type</p>
+            <p class="t-p2">{{currentProduct.type}}</p>
+            <p class="t-p1">Added</p>
+            <p class="t-p2">{{currentProduct.date}}</p>
+            <p *ngIf="currentProduct.weight" class="t-p1">Item Weight</p>
+            <p *ngIf="currentProduct.weight" class="t-p2">{{currentProduct.weight}}</p>
+            <p *ngIf="currentProduct.dimensions" class="t-p1">Dimensions</p>
+            <p *ngIf="currentProduct.dimensions" class="t-p2">{{currentProduct.dimensions}}</p>
+            <p *ngIf="currentProduct.magnetic" class="t-p1">Magnet</p>
+            <p *ngIf="currentProduct.magnetic" class="t-p2">{{currentProduct.magnetic}}</p>
+
+            
+
+        </div>
+    </div>
+</div>
+
+<div id="notFound" *ngIf="!(currentProduct.productName)">
+    <h1>Product Not Found</h1>
+    <h3>Go Back to <a [routerLink]="['/products']">Products Page</a></h3>
+
+</div>

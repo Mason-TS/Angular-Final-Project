@@ -1,0 +1,42 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar id="toolbar">Menu</mat-toolbar>
+    
+    <mat-nav-list>
+      <a mat-list-item href="/home">Home</a>
+      <a mat-list-item href="/about">About</a>
+      <a mat-list-item href="/products">Products</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>
+        <div id="logoDiv">
+          <img id="logo" src="https://wallpapercave.com/wp/wp4261886.jpg">
+          <h2 id="name">The Qube</h2>
+        </div>
+ 
+
+
+      </span>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+    
+    <footer class="footer">
+      <h6 class="footerElement">©2023 The Qube, Inc.</h6>
+      <h6 class="footerElement">Website Created By Loading2487</h6>
+      
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

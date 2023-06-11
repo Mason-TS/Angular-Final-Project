@@ -1,0 +1,100 @@
+* {
+    text-align: center;
+}
+.example-card {
+    width: 400px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+  
+}
+
+.cardImage {
+    width: 400px;
+    height: 266.66px;
+}
+
+
+
+.productName {
+    display: inline;
+    padding-top: 10px;
+}
+
+.productPrice {
+    padding-top: 10px;
+    display: inline;
+    font-weight: 600;
+    
+}
+.nameAndPrice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+#oof {
+    text-align: center;
+    margin-bottom: 60px;
+    /* max-width: 1320px */
+}
+
+mat-card-actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.clickable:hover {
+    cursor:pointer;
+}
+
+.productName:hover {
+    text-decoration: underline;
+}
+
+.header {
+    font-size:50px;
+    font-weight: 500;
+    margin: 15px auto 0;
+
+}
+
+
+#searchBar {
+    min-width: 300px ;
+    max-width: 500px;
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 3px;
+}
+
+search-form {
+    text-align: center;
+}
+
+#top-form, #bottom-form {
+    max-width:1000px ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#priceFilter, #sortBy {
+    height: 50px;
+}
+
+#searchButton {
+    margin-left: 25px;
+    margin-right: auto;
+}
+
+.formItem {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

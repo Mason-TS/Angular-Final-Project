@@ -1,0 +1,24 @@
+
+
+img {
+width: 80%;
+min-width: 450px;
+max-width: 520px;
+margin-bottom: 30px;
+
+}
+
+
+
+.row {
+    margin:10px 17px
+
+}
+
+.col-xs-12 {
+    text-align: center;
+}
+
+.mainDiv {
+    margin-bottom: 50px;
+}

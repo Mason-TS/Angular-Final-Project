@@ -1,0 +1,20 @@
+<div class="header">
+    <div id="logoDiv">
+        <img id="logo" src="https://wallpapercave.com/wp/wp4261886.jpg">
+    </div>
+    <h1>The Qube</h1>
+</div>
+<br>
+<div id="divContainer">
+    <div id="products" >
+        <mat-card *ngFor="let product of productList " class="example-card">
+
+
+            <img [routerLink]="['/products', product.id]" class="cardImage clickable" mat-card-image src="{{product.imageUrl}}" alt="Photo of {{product.productName}}">
+            <mat-card-content class="nameAndPrice">
+    
+            <p [routerLink]="['/products', product.id]" class="productName clickable">{{product.productName}}</p> <p class="productPrice">${{product.price}}</p>
+            </mat-card-content>
+    </mat-card>
+    </div>
+</div>

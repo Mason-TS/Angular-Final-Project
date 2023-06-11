@@ -1,0 +1,74 @@
+<h2 class="header">Get Cubing! Search For a Product</h2>
+
+<form #form="ngForm" (ngSubmit)="search()" id="search-form">
+  <div id="top-form">
+    <input name="searchBar" class="formItem" id="searchBar"  type="text" [(ngModel)]="searchValue">
+    <button matTooltip="Search" class="material-icons formItem" name="searchButton" id="searchButton" type="submit" mat-stroked-button color="link">search</button>
+    <button [routerLink]="['/add']" class="formItem" id="addButton" mat-stroked-button matTooltip="Add a New Product" color="primary">Add</button>
+  </div>
+
+
+
+  <div id="bottom-form">
+    <mat-button-toggle-group id="sortBy" class="formItem" [(ngModel)]="sortBy" name="sort" aria-label="Sort">
+      <mat-button-toggle matTooltip="Sort by Name" (click)="search()" value="productName">Name</mat-button-toggle>
+      <mat-button-toggle matTooltip="Sort Low to High Price" (click)="search()" value="price&_order=asc">$-$$$</mat-button-toggle>
+      <mat-button-toggle matTooltip="Sort High to Low Price" (click)="search()" value="price&_order=desc">$$$-$</mat-button-toggle>
+    </mat-button-toggle-group>
+  
+
+    <mat-button-toggle-group id="priceFilter" class="formItem" [(ngModel)]="priceFilter" name="priceFilter" aria-label="priceFilter">
+      <mat-button-toggle matTooltip="Show products $0-$15" (click)="search()" value="&price_gte=0&price_lte=15">$0-$15</mat-button-toggle>
+      <mat-button-toggle matTooltip="Show products $16-$30" (click)="search()" value="&price_gte=16&price_lte=30">$16-$30</mat-button-toggle>
+      <mat-button-toggle matTooltip="Show products $30-$45" (click)="search()" value="&price_gte=31&price_lte=45">$30-$45</mat-button-toggle>
+      <mat-button-toggle matTooltip="Show products $46+" (click)="search()" value="&price_gte=45">$46+</mat-button-toggle>
+    </mat-button-toggle-group>
+
+    <mat-form-field class="formItem" id="typeFilter">
+      <mat-label color="warn">Filter By Type</mat-label>
+      <mat-select [(value)]="typeFilter">
+        <mat-option>None</mat-option>
+        <mat-option (click)="search()" value="2x2">2x2</mat-option>
+        <mat-option (click)="search()" value="3x3">3x3</mat-option>
+        <mat-option (click)="search()" value="4x4">4x4</mat-option>
+        <mat-option (click)="search()" value="5x5">5x5</mat-option>
+        <mat-option (click)="search()" value="6x6">6x6</mat-option>
+        <mat-option (click)="search()" value="7x7">7x7</mat-option>
+        <mat-option (click)="search()" value="Megaminx">Megaminx</mat-option>
+        <mat-option (click)="search()" value="Pyraminx">Pyraminx</mat-option>
+        <mat-option (click)="search()" value="Square-1">Square-1</mat-option>
+        <mat-option (click)="search()" value="Skewb">Skewb</mat-option>
+        <mat-option (click)="search()" value="Clock">Clock</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-stroked-button class="formItem" id="clearButton" color="accent" matTooltip="Clear Filters" (click)="clear()">Clear</button>
+  </div>
+  
+</form>
+
+
+<div id="oof">
+<div class="container" id="products" >
+  <div class="row">
+    <div *ngFor="let product of productList" class="col-xs-12 col-lg-6 col-xxl-4">
+      
+      <mat-card  class="example-card">
+
+
+          <img class="cardImage clickable" [routerLink]="['/products', product.id]" mat-card-image src="{{product.imageUrl}}" alt="Photo of {{product.productName}}">
+          <mat-card-content class="nameAndPrice">
+    
+          <p [routerLink]="['/products', product.id]" class="productName clickable">{{product.productName}}</p> 
+          <p class="productPrice">${{product.price}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button [routerLink]="['/products', product.id]" mat-stroked-button matTooltip="View Item">View</button>
+            <button [routerLink]="['/edit', product.id]" color="primary" mat-stroked-button matTooltip="Edit Item">Edit</button>
+            <button (click)="deleteItem(product.id)" color="warn" mat-stroked-button matTooltip="Delete Item">Delete</button>
+          </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Create New Product</h1>
+    <form #form="ngForm" (ngSubmit)="submit()" class="row">
+
+        <label class="col-xs-12 col-lg-6"  for="name">Name</label>
+        <input class="col-xs-12 col-lg-6" aria-label="Name" id="name-Input" type="text" name="name" [(ngModel)]="newProduct.productName">
+
+        <label class="col-xs-12 col-sm-6" for="manufacturer">Manufacturer</label>
+        <input class="col-xs-12 col-sm-6" id="manufacturer-Input" type="text" name="manufacturer" [(ngModel)]="newProduct.manufacturer">
+
+        <label class="col-xs-12 col-sm-6" for="price">Price</label>
+        <input class="col-xs-12 col-sm-6" id="price-Input" type="number" name="price" [(ngModel)]="newProduct.price">
+
+        <label class="col-xs-12 col-sm-6" for="imageUrl">ImageUrl</label>
+        <input class="col-xs-12 col-sm-6" id="imageUrl-Input" type="text" name="imageUrl" [(ngModel)]="newProduct.imageUrl">
+
+        <label class="col-xs-12 col-sm-6" for="description">Description</label>
+        <textarea class="col-xs-12 col-sm-6" id="description-Input" type="text" name="description" [(ngModel)]="newProduct.description"></textarea>
+
+        <label class="col-xs-12 col-sm-6" for="type">Type</label>
+        <input class="col-xs-12 col-sm-6" id="type-Input" type="text" name="type" [(ngModel)]="newProduct.type">
+
+        <label class="col-xs-12 col-sm-6" for="date">Date</label>
+        <input class="col-xs-12 col-sm-6" id="date-Input" type="date" name="date" [(ngModel)]="newProduct.date">
+
+        <label class="col-xs-12 col-sm-6" for="weight">Weight</label>
+        <input class="col-xs-12 col-sm-6" id="weight-Input" type="text" name="weight" [(ngModel)]="newProduct.weight">
+
+        <label class="col-xs-12 col-sm-6" for="dimensions">Dimensions</label>
+        <input class="col-xs-12 col-sm-6" id="dimensions-Input" type="text" name="dimensions" [(ngModel)]="newProduct.dimensions">
+
+        <label class="col-xs-12 col-sm-6" for="magnetic">Magnet</label>
+        <input class="col-xs-12 col-sm-6" id="magnetic-Input" type="text" name="magnetic" [(ngModel)]="newProduct.magnetic">
+
+        <div class="col-12 buttons">
+            <button  type="button" (click)="goBack()"  mat-raised-button color="accent" matTooltip="Go Back to the Previous Page">Back</button>
+            <button  type="submit" mat-raised-button color="primary" matTooltip="Submit New Product">Submit</button>
+        </div>
+    </form>
+</div>
