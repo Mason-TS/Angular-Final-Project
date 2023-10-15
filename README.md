@@ -3,6 +3,16 @@
 Version 1.0
 This is set as admin page
 
+NOTE: This site only works with a JSON-server package created by Typicode that takes a JSON file and creates a rest API with it, you can download it with the Node.js package manager.
+
+you can download by with this command line within the console.
+
+"npm install -g json-server"
+
+then within the project file
+
+json-server --watch products.json
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
 ## Development server
