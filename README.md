@@ -1,4 +1,7 @@
-# FinalProject
+# SpeedCube Retail Store
+
+Version 1.0
+This is set as admin page
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
